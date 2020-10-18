@@ -20,6 +20,7 @@ import java.util.Random;
  */
 @WebServlet(name = "CheckCodeServlet", urlPatterns = "/CheckCodeServlet")
 public class CheckCodeServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //服务器通知浏览器不要缓存
         response.setHeader("pragma", "no-cache");
@@ -74,6 +75,7 @@ public class CheckCodeServlet extends HttpServlet {
         return sb.toString();
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
     }

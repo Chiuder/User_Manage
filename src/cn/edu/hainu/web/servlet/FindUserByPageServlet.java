@@ -22,6 +22,7 @@ import java.util.Map;
  */
 @WebServlet(name = "FindUserByPageServlet", urlPatterns = "/FindUserByPageServlet")
 public class FindUserByPageServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");//设置编码
@@ -52,6 +53,7 @@ public class FindUserByPageServlet extends HttpServlet {
         request.getRequestDispatcher("/list.jsp").forward(request, response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
     }

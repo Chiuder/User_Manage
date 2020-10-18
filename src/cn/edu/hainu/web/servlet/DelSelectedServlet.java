@@ -19,6 +19,7 @@ import java.io.IOException;
  */
 @WebServlet(name = "DelSelectedServlet", urlPatterns = "/DelSelectedServlet")
 public class DelSelectedServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");//设置编码
@@ -32,6 +33,7 @@ public class DelSelectedServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/FindUserByPageServlet");
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
     }
